@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="949409daa1294e358789cb50539c932c" Name="Diagram1">
+        <EntityTypeShape EntityType="SchoolModel.Absente" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolModel.AsocieriAnSpecMaterie" Width="1.5" PointX="6" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolModel.AsocieriElevAnSpec" Width="1.5" PointX="3.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolModel.AsocieriProfMaterieClasa" Width="1.5" PointX="6" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolModel.Clase" Width="1.5" PointX="3.75" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolModel.Diriginti" Width="1.5" PointX="1.5" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolModel.Elevi" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolModel.MaterialeDidactice" Width="1.5" PointX="3" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolModel.Materii" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolModel.Note" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolModel.Profesori" Width="1.5" PointX="1.5" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolModel.Specializari" Width="1.5" PointX="1.5" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolModel.sysdiagrams" Width="1.5" PointX="3.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolModel.Utilizatori" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="SchoolModel.FK__Absente__ElevID__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolModel.FK__Absente__Materie__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolModel.FK__AsocieriA__Mater__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolModel.FK__AsocieriA__Speci__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolModel.FK__AsocieriE__ElevI__02FC7413" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolModel.FK__AsocieriE__Speci__03F0984C" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolModel.FK__AsocieriP__Clasa__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolModel.FK__AsocieriP__Mater__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolModel.FK__AsocieriP__Profe__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolModel.FK__Clase__Diriginte__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolModel.FK__Clase__Specializ__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolModel.FK__Diriginti__Profe__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolModel.FK__Diriginti__Utili__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolModel.FK__Elevi__Utilizato__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolModel.FK__Note__ElevID__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolModel.FK__Materiale__Mater__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolModel.FK__Note__MaterieID__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolModel.FK__Profesori__Utili__3B75D760" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

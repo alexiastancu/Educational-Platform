@@ -1,0 +1,57 @@
+﻿<Window x:Class="EducationalPlatform.Views.Elev.MenuElev"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EducationalPlatform.Views.Elev"
+        mc:Ignorable="d"
+        Title="MenuElev" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="Width" Value="155"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="7,7,7,7" Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding  Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding  VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="FontSize" Value="35"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Window.Background>
+        PaleVioletRed
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="299*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="74"/>
+            <RowDefinition Height="74"/>
+            <RowDefinition Height="74" />
+            <RowDefinition Height="74" />
+            <RowDefinition Height="74" />
+
+
+        </Grid.RowDefinitions>
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" Content="Meniu Elev" FontSize="30" Foreground="White" FontFamily="Miriam Fixed" Height="60" Width="196"/>
+
+        <Button Grid.Row="1" Command="{Binding MaterialeDidacticeCommand}" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Materiale didactice" Style="{StaticResource ButtonStyle}" FontFamily="Miriam Fixed" Height="60" Width="332"/>
+        <Button Grid.Row="2" Command="{Binding AbsenteCommand}" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Absente" Style="{StaticResource ButtonStyle}" FontFamily="Miriam Fixed" Height="60" Width="296"/>
+        <Button Grid.Row="3" Command="{Binding NoteCommand}" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Note" Style="{StaticResource ButtonStyle}" FontFamily="Miriam Fixed" Margin="10,0,0,0" Height="60" Width="286"/>
+        <Button Grid.Row="4" Command="{Binding MediiCommand}" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Medii" Style="{StaticResource ButtonStyle}" FontFamily="Miriam Fixed" Height="60" Width="296"/>
+
+    </Grid>
+</Window>

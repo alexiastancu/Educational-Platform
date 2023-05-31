@@ -1,0 +1,80 @@
+﻿<Window x:Class="EducationalPlatform.Views.Administrator.SpecializariEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EducationalPlatform.Views.Administrator"
+        mc:Ignorable="d"
+        Title="SpecializariEdit" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="Width" Value="155"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="7,7,7,7" Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding  Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding  VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="FontSize" Value="35"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid Grid.Background="PaleVioletRed">
+        <Label Content=" Editare Specializari" FontFamily="Miriam Fixed" Foreground="White" FontSize="25" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="486" Margin="0,11,0,367"/>
+        <ListBox x:Name="specializareListBox" ItemsSource="{Binding Specializari}" SelectedItem="{Binding SelectedSpecializare, Mode=TwoWay}" SelectionMode="Single" Width="254" HorizontalAlignment="Left" Margin="46,72,0,71" FontSize="18" Background="Transparent" FontFamily="MV Boli" Foreground="White" BorderBrush="White">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                <Run Text="{Binding Nume}" />
+               
+                    </TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <TextBox Text="{Binding Nume, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Background="Transparent" Foreground="White" Margin="530,156,38,222"/>
+      
+        <Label Content=" Nume:" FontFamily="Miriam Fixed" Foreground="White" FontSize="25" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Width="180" Margin="336,161,0,216"/>
+
+        <Button Content="ADD" Command="{Binding AddSpeciaizareCommand}" FontFamily="Miriam Fixed" Margin="305,324,340,50" >
+            <Button.Resources>
+                <BooleanToVisibilityConverter x:Key="BoolToVis" />
+            </Button.Resources>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonStyle}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Category, UpdateSourceTrigger=PropertyChanged}" Value="">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button Content="DELETE" Command="{Binding DeleteSpecializareCommand}" CommandParameter="{Binding ElementName=categoriesListBox, Path=SelectedItem}" Style="{StaticResource ButtonStyle}" FontFamily="Miriam Fixed" Margin="635,324,10,50" />
+        <Button Content="UPDATE" Command="{Binding UpdateSpecializareCommand}" FontFamily="Miriam Fixed" Margin="465,324,180,50" >
+            <Button.Resources>
+                <BooleanToVisibilityConverter x:Key="BoolToVis" />
+            </Button.Resources>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonStyle}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Category, UpdateSourceTrigger=PropertyChanged}" Value="">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+    </Grid>
+</Window>
